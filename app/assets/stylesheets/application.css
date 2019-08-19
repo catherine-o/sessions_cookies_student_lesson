@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+ .nav-list {
+     display: flex;
+     justify-content: flex-end;
+ }
+
+ .nav-list p {
+     margin: 12px
+ }

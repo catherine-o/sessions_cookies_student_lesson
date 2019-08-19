@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_09_191414) do
+ActiveRecord::Schema.define(version: 2019_08_19_192644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 2019_07_09_191414) do
     t.string "location"
     t.bigint "island_id"
     t.index ["island_id"], name: "index_treasures_on_island_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "username"
+    t.string "password_digest"
   end
 
   add_foreign_key "treasures", "islands"

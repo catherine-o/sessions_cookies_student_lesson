@@ -1,5 +1,9 @@
 class TreasuresController < ApplicationController
   def index
-    @treasures = Treasure.all
+    if current_user
+      @treasures = Treasure.all
+    else 
+      render file: 'public/404.html'
+    end
   end
 end 
